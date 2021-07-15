@@ -1,6 +1,8 @@
 mod nql;
+mod presents;
 
 use nql::NotQuiteLisp;
+use presents::Presents;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -11,8 +13,10 @@ pub trait Day {
 pub fn run(n: Option<usize>) {
     // Create array of days.  Each entry references a Day.
     let day1 = NotQuiteLisp::load("data/day1_input.txt");
+    let day2 = Presents::load("data/day2_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
+        &day2,
     ];
 
     match n {
