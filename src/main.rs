@@ -1,10 +1,12 @@
 mod nql;
 mod presents;
 mod houses;
+mod mining;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
 use houses::Houses;
+use mining::Mining;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -17,10 +19,12 @@ pub fn run(n: Option<usize>) {
     let day1 = NotQuiteLisp::load("data/day1_input.txt");
     let day2 = Presents::load("data/day2_input.txt");
     let day3 = Houses::load("data/day3_input.txt");
+    let day4 = Mining::new("iwrupvqb");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
         &day3,
+        &day4,
     ];
 
     match n {
@@ -59,7 +63,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(None);
+    run(Some(4));
 }
 
 
