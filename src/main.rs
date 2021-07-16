@@ -2,11 +2,15 @@ mod nql;
 mod presents;
 mod houses;
 mod mining;
+mod naughty_nice;
+mod lights;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
 use houses::Houses;
 use mining::Mining;
+use naughty_nice::NaughtyNice;
+use lights::Lights;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -20,11 +24,15 @@ pub fn run(n: Option<usize>) {
     let day2 = Presents::load("data/day2_input.txt");
     let day3 = Houses::load("data/day3_input.txt");
     let day4 = Mining::new("iwrupvqb");
+    let day5 = NaughtyNice::load("data/day5_input.txt");
+    let day6 = Lights::load("data/day6_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
         &day3,
         &day4,
+        &day5,
+        &day6,
     ];
 
     match n {
@@ -63,7 +71,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(4));
+    run(Some(6));
 }
 
 
