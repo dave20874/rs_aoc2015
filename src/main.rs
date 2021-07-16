@@ -4,6 +4,8 @@ mod houses;
 mod mining;
 mod naughty_nice;
 mod lights;
+mod logic;
+mod matchsticks;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -11,6 +13,8 @@ use houses::Houses;
 use mining::Mining;
 use naughty_nice::NaughtyNice;
 use lights::Lights;
+use logic::Circuit;
+use matchsticks::Matchsticks;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -26,6 +30,8 @@ pub fn run(n: Option<usize>) {
     let day4 = Mining::new("iwrupvqb");
     let day5 = NaughtyNice::load("data/day5_input.txt");
     let day6 = Lights::load("data/day6_input.txt");
+    let day7 = Circuit::load("data/day7_input.txt");
+    let day8 = Matchsticks::load("data/day8_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -33,6 +39,8 @@ pub fn run(n: Option<usize>) {
         &day4,
         &day5,
         &day6,
+        &day7,
+        &day8,
     ];
 
     match n {
@@ -71,7 +79,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(6));
+    run(Some(8));
 }
 
 
