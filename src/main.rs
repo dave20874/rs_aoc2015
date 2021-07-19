@@ -6,6 +6,8 @@ mod naughty_nice;
 mod lights;
 mod logic;
 mod matchsticks;
+mod traveler;
+mod look_say;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -15,6 +17,8 @@ use naughty_nice::NaughtyNice;
 use lights::Lights;
 use logic::Circuit;
 use matchsticks::Matchsticks;
+use traveler::Traveler;
+use look_say::LookSay;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -32,6 +36,8 @@ pub fn run(n: Option<usize>) {
     let day6 = Lights::load("data/day6_input.txt");
     let day7 = Circuit::load("data/day7_input.txt");
     let day8 = Matchsticks::load("data/day8_input.txt");
+    let day9 = Traveler::load("data/day9_input.txt");
+    let day10 = LookSay::new("113122113");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -41,6 +47,8 @@ pub fn run(n: Option<usize>) {
         &day6,
         &day7,
         &day8,
+        &day9,
+        &day10,
     ];
 
     match n {
@@ -79,7 +87,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(8));
+    run(Some(10));
 }
 
 
