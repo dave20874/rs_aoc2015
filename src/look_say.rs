@@ -67,20 +67,15 @@ mod tests {
     #[test]
     fn test_example() {
         let day = LookSay::new("1");
+        assert_eq!(day.step(1), [1, 1]);
         day.step(1);
-        assert_eq!(day.digits, "11");
+        assert_eq!(day.step(2), [2, 1]);
         day.step(1);
-        assert_eq!(day.digits, "21");
+        assert_eq!(day.step(3), [1, 2, 1, 1]);
         day.step(1);
-        assert_eq!(day.digits, "1211");
+        assert_eq!(day.step(4), [1, 1, 1, 2, 2, 1]);
         day.step(1);
-        assert_eq!(day.digits, "111221");
-        day.step(1);
-        assert_eq!(day.digits, "312211");
-
-        let day = LookSay::new("1");
-        day.step(5);
-        assert_eq!(day.digits, "312211");
+        assert_eq!(day.step(5), [3, 1, 2, 2, 1, 1]);
     }
 
     #[test]

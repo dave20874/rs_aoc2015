@@ -8,6 +8,7 @@ mod logic;
 mod matchsticks;
 mod traveler;
 mod look_say;
+mod password;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -19,6 +20,7 @@ use logic::Circuit;
 use matchsticks::Matchsticks;
 use traveler::Traveler;
 use look_say::LookSay;
+use password::PwGen;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -38,6 +40,7 @@ pub fn run(n: Option<usize>) {
     let day8 = Matchsticks::load("data/day8_input.txt");
     let day9 = Traveler::load("data/day9_input.txt");
     let day10 = LookSay::new("113122113");
+    let day11 = PwGen::new("cqjxjnds");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -49,6 +52,7 @@ pub fn run(n: Option<usize>) {
         &day8,
         &day9,
         &day10,
+        &day11,
     ];
 
     match n {
@@ -87,7 +91,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(10));
+    run(Some(11));
 }
 
 
