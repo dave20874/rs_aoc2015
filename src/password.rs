@@ -94,7 +94,7 @@ impl super::Day for PwGen {
         let mut v = PwGen::s_to_v(&self.seed);
         PwGen::next_pw(&mut v, false);
         println!("Next password: {}", PwGen::v_to_s(&v));
-        return Ok(0 as i64);
+        return Ok(0);
     }
 
     fn part2(&self) -> Result<i64, &str> {
@@ -103,7 +103,7 @@ impl super::Day for PwGen {
         println!("next password: {}", PwGen::v_to_s(&v));
         PwGen::next_pw(&mut v, false);
         println!("Next next password: {}", PwGen::v_to_s(&v));
-        return Ok(0 as i64);
+        return Ok(0);
     }
 }
 

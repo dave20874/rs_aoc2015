@@ -9,6 +9,7 @@ mod matchsticks;
 mod traveler;
 mod look_say;
 mod password;
+mod day12;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -21,6 +22,7 @@ use matchsticks::Matchsticks;
 use traveler::Traveler;
 use look_say::LookSay;
 use password::PwGen;
+use day12::Day12;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -41,6 +43,7 @@ pub fn run(n: Option<usize>) {
     let day9 = Traveler::load("data/day9_input.txt");
     let day10 = LookSay::new("113122113");
     let day11 = PwGen::new("cqjxjnds");
+    let day12 = Day12::load("data/day12_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -53,6 +56,7 @@ pub fn run(n: Option<usize>) {
         &day9,
         &day10,
         &day11,
+        &day12,
     ];
 
     match n {
@@ -60,12 +64,12 @@ pub fn run(n: Option<usize>) {
             // Run for one day.
             match days[day_no-1].part1() {
                 Ok(val) => println!("Day {}, part 1: {}", day_no, val),
-                Err(_) => println!("Day {}, part 1: No result found.", day_no),
+                Err(_) => println!("Day {}, part 1: No result.", day_no),
             }
 
             match days[day_no-1].part2() {
                 Ok(val) => println!("Day {}, part 2: {}", day_no, val),
-                Err(_) => println!("Day {}, part 2: No result found.", day_no),
+                Err(_) => println!("Day {}, part 2: No result.", day_no),
             }
         }
         None => {
@@ -76,12 +80,12 @@ pub fn run(n: Option<usize>) {
 
                 match day.part1() {
                     Ok(val) => println!("Day {}, part 1: {}", day_no, val),
-                    Err(_) => println!("Day {}, part 1: No result found.", day_no),
+                    Err(_) => println!("Day {}, part 1: No result.", day_no),
                 }
 
                 match day.part2() {
                     Ok(val) => println!("Day {}, part 2: {}", day_no, val),
-                    Err(_) => println!("Day {}, part 2: No result found.", day_no),
+                    Err(_) => println!("Day {}, part 2: No result.", day_no),
                 }
             }
         }
@@ -91,7 +95,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(11));
+    run(Some(12));
 }
 
 
