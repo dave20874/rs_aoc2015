@@ -13,9 +13,8 @@ impl Day12 {
 
         let mut s: String = String::new();
         reader.read_line(&mut s).unwrap();
-        let json_val = serde_json::from_str(&s).unwrap();
 
-        Day12 { val: json_val }
+        Day12::new(&s)
     }
 
     fn new(content: &str) -> Day12 {

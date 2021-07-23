@@ -95,7 +95,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(12));
+    run(None);
 }
 
 
