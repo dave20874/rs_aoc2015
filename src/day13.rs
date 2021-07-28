@@ -105,7 +105,7 @@ mod tests {
     #[test]
     fn test_load() {
         let d = Day13::load("data/day13_example1.txt");
-        assert_eq!(d.happy_units.len(), 12);
+        assert_eq!(d.happy_units.len(), 20);
         assert_eq!(d.people.len(), 4);
     }
 
