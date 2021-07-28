@@ -10,6 +10,7 @@ mod traveler;
 mod look_say;
 mod password;
 mod day12;
+mod day13;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -23,6 +24,7 @@ use traveler::Traveler;
 use look_say::LookSay;
 use password::PwGen;
 use day12::Day12;
+use day13::Day13;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -44,6 +46,7 @@ pub fn run(n: Option<usize>) {
     let day10 = LookSay::new("113122113");
     let day11 = PwGen::new("cqjxjnds");
     let day12 = Day12::load("data/day12_input.txt");
+    let day13 = Day13::load("data/day13_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -57,6 +60,7 @@ pub fn run(n: Option<usize>) {
         &day10,
         &day11,
         &day12,
+        &day13,
     ];
 
     match n {
@@ -95,7 +99,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(None);
+    run(Some(13));
 }
 
 
