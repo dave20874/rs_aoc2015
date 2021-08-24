@@ -12,6 +12,7 @@ mod password;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 
 use nql::NotQuiteLisp;
 use presents::Presents;
@@ -27,6 +28,7 @@ use password::PwGen;
 use day12::Day12;
 use day13::Day13;
 use day14::Day14;
+use day15::Day15;
 
 pub trait Day {
     // fn load(filename: &str) -> &dyn Day;
@@ -50,6 +52,7 @@ pub fn run(n: Option<usize>) {
     let day12 = Day12::load("data/day12_input.txt");
     let day13 = Day13::load("data/day13_input.txt");
     let day14 = Day14::load("data/day14_input.txt");
+    let day15 = Day15::load("data/day15_input.txt");
     let days: Vec<&dyn Day> = vec![
         &day1,
         &day2,
@@ -65,6 +68,7 @@ pub fn run(n: Option<usize>) {
         &day12,
         &day13,
         &day14,
+        &day15,
     ];
 
     match n {
@@ -103,7 +107,7 @@ pub fn run(n: Option<usize>) {
 fn main() {
     println!("Advent of Code 2015.");
 
-    run(Some(14));
+    run(Some(15));
 }
 
 
