@@ -79,11 +79,11 @@ impl Houses {
 }
 
 impl super::Day for Houses {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.visited() as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.visited2() as i64);
     }
 }
@@ -123,13 +123,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = Houses::load("data/day3_input.txt");
+        let mut day = Houses::load("data/day3_input.txt");
         assert_eq!(day.part1(), Ok(2565));
     }
 
     #[test]
     fn test_part2() {
-        let day = Houses::load("data/day3_input.txt");
+        let mut day = Houses::load("data/day3_input.txt");
         assert_eq!(day.part2(), Ok(2639));
     }
 }

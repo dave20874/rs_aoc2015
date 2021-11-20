@@ -90,17 +90,17 @@ impl PwGen {
 }
 
 impl super::Day for PwGen {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         let mut v = PwGen::s_to_v(&self.seed);
         PwGen::next_pw(&mut v, false);
         println!("Next password: {}", PwGen::v_to_s(&v));
         return Ok(0);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         let mut v = PwGen::s_to_v(&self.seed);
         PwGen::next_pw(&mut v, false);
-        println!("next password: {}", PwGen::v_to_s(&v));
+        // println!("next password: {}", PwGen::v_to_s(&v));
         PwGen::next_pw(&mut v, false);
         println!("Next next password: {}", PwGen::v_to_s(&v));
         return Ok(0);
@@ -135,14 +135,14 @@ mod tests {
     #[test]
     fn test_part1() {
         // prints answer: cqjxxyzz
-        let day = PwGen::new("cqjxjnds");
+        let mut day = PwGen::new("cqjxjnds");
         assert_eq!(day.part1(), Ok(0));
     }
 
     #[test]
     fn test_part2() {
         // prints answer: cqkaabcc
-        let day = PwGen::new("cqjxjnds");
+        let mut day = PwGen::new("cqjxjnds");
         assert_eq!(day.part2(), Ok(0));
     }
 }

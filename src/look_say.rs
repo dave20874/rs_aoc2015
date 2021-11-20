@@ -48,12 +48,12 @@ impl LookSay {
 }
 
 impl super::Day for LookSay {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         let seq = self.step(40);
         return Ok(seq.len() as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         let seq = self.step(50);
         return Ok(seq.len() as i64);
     }
@@ -80,13 +80,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = LookSay::new("1113122113");
+        let mut day = LookSay::new("1113122113");
         assert_eq!(day.part1(), Ok(360154));
     }
 
     #[test]
     fn test_part2() {
-        let day = LookSay::new("1113122113");
+        let mut day = LookSay::new("1113122113");
         assert_eq!(day.part2(), Ok(5103798));
     }
 }

@@ -93,7 +93,7 @@ impl Matchsticks {
 }
 
 impl super::Day for Matchsticks {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         let mut code = 0;
         let mut mem = 0;
 
@@ -104,7 +104,7 @@ impl super::Day for Matchsticks {
         return Ok((code - mem) as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         let mut code = 0;
         let mut encoded = 0;
 
@@ -158,21 +158,21 @@ mod tests {
 
     #[test]
     fn test_example() {
-        let day = Matchsticks::load("data/day8_example1.txt");
+        let mut day = Matchsticks::load("data/day8_example1.txt");
 
         assert_eq!(day.part1(), Ok(12));
     }
 
     #[test]
     fn test_part1() {
-        let day = Matchsticks::load("data/day8_input.txt");
+        let mut day = Matchsticks::load("data/day8_input.txt");
 
         assert_eq!(day.part1(), Ok(1371));
     }
 
     #[test]
     fn test_part2() {
-        let day = Matchsticks::load("data/day8_input.txt");
+        let mut day = Matchsticks::load("data/day8_input.txt");
 
         assert_eq!(day.part2(), Ok(2117));
     }

@@ -67,11 +67,11 @@ impl Day12 {
 }
 
 impl super::Day for Day12 {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.sum_nums(false) as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.sum_nums(true) as i64);
     }
 }
@@ -110,13 +110,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let d = Day12::load("data/day12_input.txt");
+        let mut d = Day12::load("data/day12_input.txt");
         assert_eq!(d.part1(), Ok(191164));
     }
 
     #[test]
     fn test_part2() {
-        let d = Day12::load("data/day12_input.txt");
+        let mut d = Day12::load("data/day12_input.txt");
         assert_eq!(d.part2(), Ok(87842));
     }
 }

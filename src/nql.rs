@@ -55,11 +55,11 @@ impl NotQuiteLisp {
 }
 
 impl super::Day for NotQuiteLisp {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.floor() as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.basement_pos() as i64);
     }
 }
@@ -107,13 +107,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let rr = &NotQuiteLisp::load("data/day1_input.txt");
+        let rr = &mut NotQuiteLisp::load("data/day1_input.txt");
         assert_eq!(rr.part1(), Ok(138));
     }
 
     #[test]
     fn test_part2() {
-        let rr = &NotQuiteLisp::load("data/day1_input.txt");
+        let rr = &mut NotQuiteLisp::load("data/day1_input.txt");
         assert_eq!(rr.part2(), Ok(1771));
     }
 }

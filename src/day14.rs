@@ -104,12 +104,12 @@ impl Day14 {
 }
 
 impl super::Day for Day14 {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         let (_winner, dist) = self.max_distance(2503);
         return Ok(dist as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         let (_winner, dist) = self.max_points(2503);
         return Ok(dist as i64);
     }
@@ -157,13 +157,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let d = Day14::load("data/day14_input.txt");
+        let mut d = Day14::load("data/day14_input.txt");
         assert_eq!(d.part1(), Ok(2696));
     }
 
     #[test]
     fn test_part2() {
-        let d = Day14::load("data/day14_input.txt");
+        let mut d = Day14::load("data/day14_input.txt");
         assert_eq!(d.part2(), Ok(1084));
     }
 }

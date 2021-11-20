@@ -88,11 +88,11 @@ impl Day13 {
 }
 
 impl super::Day for Day13 {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.get_optimal(false) as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.get_optimal(true) as i64);
     }
 }
@@ -117,14 +117,14 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let d = Day13::load("data/day13_input.txt");
+        let mut d = Day13::load("data/day13_input.txt");
         assert_ne!(d.part1(), Ok(65));  // It's not 65!
         assert_eq!(d.part1(), Ok(733));
     }
 
     #[test]
     fn test_part2() {
-        let d = Day13::load("data/day13_input.txt");
+        let mut d = Day13::load("data/day13_input.txt");
         assert_eq!(d.part2(), Ok(725));
     }
 }

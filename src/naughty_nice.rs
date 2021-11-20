@@ -99,11 +99,11 @@ impl NaughtyNice {
 }
 
 impl super::Day for NaughtyNice {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.num_nice() as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.num_nice2() as i64);
     }
 }
@@ -153,14 +153,14 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = NaughtyNice::load("data/day5_input.txt");
+        let mut day = NaughtyNice::load("data/day5_input.txt");
         assert_eq!(day.part1(), Ok(255));
     }
 
 
     #[test]
     fn test_part2() {
-        let day = NaughtyNice::load("data/day5_input.txt");
+        let mut day = NaughtyNice::load("data/day5_input.txt");
         assert_eq!(day.part2(), Ok(55));
     }
 }

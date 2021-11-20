@@ -59,7 +59,7 @@ impl Presents {
 }
 
 impl super::Day for Presents {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         let mut accum = 0;
         for dim in &self.dims {
             accum += Presents::paper_required(&dim);
@@ -68,7 +68,7 @@ impl super::Day for Presents {
         return Ok(accum as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         let mut accum = 0;
         for dim in &self.dims {
             accum += Presents::ribbon_required(&dim);
@@ -117,13 +117,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = &Presents::load("data/day2_input.txt");
+        let day = &mut Presents::load("data/day2_input.txt");
         assert_eq!(day.part1(), Ok(1598415));
     }
 
     #[test]
     fn test_part2() {
-        let day = &Presents::load("data/day2_input.txt");
+        let day = &mut Presents::load("data/day2_input.txt");
         assert_eq!(day.part2(), Ok(3812909));
     }
 }

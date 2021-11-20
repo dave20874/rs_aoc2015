@@ -189,11 +189,11 @@ impl Circuit {
 }
 
 impl super::Day for Circuit {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.eval("a") as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         // "Take the signal you got on wire a..."
         let initial_a = self.eval("a");
 
@@ -242,13 +242,13 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = Circuit::load("data/day7_input.txt");
+        let mut day = Circuit::load("data/day7_input.txt");
         assert_eq!(day.part1(), Ok(46065));
     }
 
     #[test]
     fn test_part2() {
-        let day = Circuit::load("data/day7_input.txt");
+        let mut day = Circuit::load("data/day7_input.txt");
         assert_eq!(day.part2(), Ok(14134));
     }
 }

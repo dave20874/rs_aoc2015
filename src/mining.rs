@@ -32,11 +32,11 @@ impl Mining {
 }
 
 impl super::Day for Mining {
-    fn part1(&self) -> Result<i64, &str> {
+    fn part1(&mut self) -> Result<i64, &str> {
         return Ok(self.get_soln(5) as i64);
     }
 
-    fn part2(&self) -> Result<i64, &str> {
+    fn part2(&mut self) -> Result<i64, &str> {
         return Ok(self.get_soln(6) as i64);
     }
 }
@@ -61,14 +61,14 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let day = Mining::new("iwrupvqb");
+        let mut day = Mining::new("iwrupvqb");
         assert_eq!(day.part1(), Ok(346386))
     }
 
 
     #[test]
     fn test_part2() {
-        let day = Mining::new("iwrupvqb");
+        let mut day = Mining::new("iwrupvqb");
         assert_eq!(day.part2(), Ok(9958218))
     }
 }
