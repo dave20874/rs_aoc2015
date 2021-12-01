@@ -25,9 +25,9 @@ checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
 
 [[package]]
 name = "fixedbitset"
-version = "0.4.0"
+version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "398ea4fabe40b9b0d885340a2a991a44c8a645624075ad966d21f88688e2b69e"
+checksum = "86d4de0081402f5e88cdac65c8dcdcc73118c1a7a465e2a05f0da05843a8ea33"
 
 [[package]]
 name = "hashbrown"
@@ -46,12 +46,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "integer-sqrt"
-version = "0.1.5"
+name = "itertools"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "276ec31bcb4a9ee45f58bec6f9ec700ae4cf4f4f8f2fa7e06cb406bd5ffdd770"
+checksum = "f56a2d0bc861f9165be4eb3442afd3c236d8a98afd426f65d92324ae1091a484"
 dependencies = [
- "num-traits",
+ "either",
 ]
 
 [[package]]
@@ -98,16 +98,24 @@ dependencies = [
 
 [[package]]
 name = "pathfinding"
-version = "2.2.2"
+version = "1.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "277bd6900ba1e7e578f320b4f78b9443925cc4a5492c9e1327774df044ec4607"
+checksum = "37691aaf6640549d85ed79575cb159843b07380d420aac9e891b627e7cc3f1f3"
 dependencies = [
  "fixedbitset",
  "indexmap",
- "integer-sqrt",
- "itertools",
+ "itertools 0.8.2",
  "num-traits",
- "rustc-hash",
+]
+
+[[package]]
+name = "priority-queue"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf40e51ccefb72d42720609e1d3c518de8b5800d723a09358d4a6d6245e1f8ca"
+dependencies = [
+ "autocfg",
+ "indexmap",
 ]
 
 [[package]]
@@ -131,19 +139,14 @@ checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
 name = "rs_aoc2015"
 version = "0.1.0"
 dependencies = [
- "itertools",
+ "itertools 0.10.1",
  "lazy_static",
  "md5",
  "pathfinding",
+ "priority-queue",
  "regex",
  "serde_json",
 ]
-
-[[package]]
-name = "rustc-hash"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
 
 [[package]]
 name = "ryu"
